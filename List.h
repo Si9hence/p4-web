@@ -267,10 +267,10 @@ void List<T>::pop_front() {
 template <typename T>
 void List<T>::pop_back() {
     assert(!empty());
-    // Node* temp = last;
+    Node* temp = last;
     last = last->prev;
     this->list_len--;
-    // delete temp;
+    temp->~();
     return;
 }
 
